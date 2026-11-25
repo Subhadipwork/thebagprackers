@@ -60,7 +60,7 @@ export default function Contact() {
                 aria-label={s.label}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white ring-1 ring-forest/10 transition hover:ring-sunset"
               >
-                <Image src={s.icon} alt="" width={20} height={20} />
+                <Image src={s.icon} alt="" width={20} height={20} unoptimized />
               </a>
             ))}
           </div>

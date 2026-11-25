@@ -8,10 +8,11 @@ export default function Footer() {
         <div>
           <div className="inline-block rounded-2xl bg-cream p-3">
             <Image
-              src="/the-backpackers-logo-wide.jpg"
+              src="/the-backpackers-logo-wide.webp"
               alt="The Backpackers"
-              width={1130}
-              height={470}
+              width={480}
+              height={200}
+              unoptimized
               className="h-14 w-auto mix-blend-multiply"
             />
           </div>
@@ -57,7 +58,7 @@ export default function Footer() {
                 aria-label={s.label}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream/90 transition hover:bg-gold"
               >
-                <Image src={s.icon} alt="" width={16} height={16} />
+                <Image src={s.icon} alt="" width={16} height={16} unoptimized />
               </a>
             ))}
           </div>

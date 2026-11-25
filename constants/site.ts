@@ -5,8 +5,13 @@
  * TODO before launch: replace the social links marked PLACEHOLDER.
  */
 
+/** Public site URL (no trailing slash). Override with NEXT_PUBLIC_SITE_URL if the domain changes. */
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://thebagpackers.in").replace(/\/$/, "");
+
 export const SITE = {
   name: "The Backpackers",
+  description:
+    "Kolkata-based travel company for mountain and nature trips to Meghalaya, Arunachal Pradesh and Kashmir. Join a group tour or plan a customized trip.",
   tagline: "Wander More, Worry Less.",
   city: "Kolkata, West Bengal",
   phone: "+91 89108 93882",

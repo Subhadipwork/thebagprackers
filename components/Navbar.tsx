@@ -26,11 +26,12 @@ export default function Navbar() {
       <nav className="container-page flex h-[72px] items-center justify-between gap-6">
         <a href="#top" aria-label="The Backpackers home" className="shrink-0">
           <Image
-            src="/the-backpackers-logo-wide.jpg"
+            src="/the-backpackers-logo-wide.webp"
             alt="The Backpackers"
-            width={1130}
-            height={470}
-            priority
+            width={480}
+            height={200}
+            loading="eager"
+            unoptimized
             className="h-12 w-auto mix-blend-multiply sm:h-[52px]"
           />
         </a>
