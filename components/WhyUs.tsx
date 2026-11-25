@@ -1,5 +1,6 @@
 import { Heart, MapPin, MessageCircle, Mountain, Users } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { ScrollPath } from "@/components/ui/skiper/scroll-path";
 import { WHY_US } from "@/constants/site";
 
 const ICONS = {
@@ -25,8 +26,10 @@ export default function WhyUs() {
         />
       </svg>
 
+      <ScrollPath className="absolute inset-x-0 top-6 h-32 sm:top-10 sm:h-44" />
+
       <div className="container-page relative">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl pt-16 sm:pt-20">
           <p className="eyebrow text-gold">Why travel with us</p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl">
             A small team that loves the mountains as much as you do

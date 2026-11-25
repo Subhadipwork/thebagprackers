@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { ScrollProgressRing } from "@/components/ui/skiper/scroll-progress-ring";
 import { HERO_PHOTO, photo } from "@/constants/site";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="top">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <ScrollProgressRing />
       </body>
     </html>
   );

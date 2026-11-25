@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { ProgressiveBlur } from "@/components/ui/skiper/progressive-blur";
 import { HERO_PHOTO, photo } from "@/constants/site";
 
 export default function Hero() {
@@ -15,9 +16,9 @@ export default function Hero() {
         className="-z-20 object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-forest-deep/90 via-forest-deep/60 to-forest-deep/10" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-forest-deep/50 to-transparent" />
+      <ProgressiveBlur position="bottom" height="110px" blurAmount="6px" className="z-10" />
 
-      <div className="container-page flex min-h-[calc(100svh-72px)] flex-col justify-center py-20 md:min-h-[640px]">
+      <div className="container-page flex min-h-[calc(100svh-72px)] flex-col justify-center pb-32 pt-20 md:min-h-[680px]">
         <div className="max-w-2xl text-cream">
           <BlurFade delay={0.05}>
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-gold ring-1 ring-white/20 backdrop-blur">
