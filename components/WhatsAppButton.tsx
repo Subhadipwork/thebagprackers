@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Enquire on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:brightness-95"
+      className="wa-in fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:brightness-95 active:scale-95 motion-reduce:hover:translate-y-0"
     >
       <MessageCircle className="h-5 w-5" aria-hidden />
       <span className="hidden sm:inline">Enquire on WhatsApp</span>

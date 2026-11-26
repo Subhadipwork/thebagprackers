@@ -15,6 +15,12 @@ export const SITE = {
   tagline: "Wander More, Worry Less.",
   city: "Kolkata, West Bengal",
   phone: "+91 89108 93882",
+  /** Background video for the hero (loaded after the page; set to "" to turn off). */
+  // Dev-only placeholder: travelxploria.com's video (carries their branding), shown on
+  // `npm run dev` only, never in the production build. Swap in your own footage,
+  // e.g. "/hero-video.mp4", to use it on the live site.
+  heroVideo:
+    process.env.NODE_ENV === "development" ? "https://travelxploria.com/hero-video.mp4" : "",
   whatsappNumber: "918910893882", // country code + number, digits only
   email: "hello@thebackpackers.in",
   socials: [

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Marquee } from "@/components/ui/marquee";
 import { HoverExpand } from "@/components/ui/skiper/hover-expand";
 import { GALLERY, photo } from "@/constants/site";
+import { RevealText } from "@/components/ui/reveal-text";
 
 function Row({ items, reverse }: { items: typeof GALLERY; reverse?: boolean }) {
   return (
@@ -31,7 +32,9 @@ export default function Gallery() {
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Travel gallery</p>
-          <h2 className="section-title mt-3">A glimpse of the mountains</h2>
+          <h2 className="section-title mt-3">
+            <RevealText text="A glimpse of the mountains" />
+          </h2>
           <p className="mt-4 text-muted">
             Waterfalls, valleys, lakes and snow. A taste of the landscapes waiting for you.
           </p>

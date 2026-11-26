@@ -3,6 +3,7 @@ import { Dancing_Script, Inter, Montserrat } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import MotionProvider from "@/components/MotionProvider";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { ScrollProgressRing } from "@/components/ui/skiper/scroll-progress-ring";
@@ -78,11 +79,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StructuredData />
       </head>
       <body>
-        <Navbar />
-        <main id="top">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <ScrollProgressRing />
+        <MotionProvider>
+          <Navbar />
+          <main id="top">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <ScrollProgressRing />
+        </MotionProvider>
       </body>
     </html>
   );

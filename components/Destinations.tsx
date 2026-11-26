@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight, Compass } from "lucide-react";
 import { CardStack } from "@/components/ui/skiper/card-stack";
 import { DESTINATIONS, photo } from "@/constants/site";
+import { RevealText } from "@/components/ui/reveal-text";
 
 function DestinationCard({ d, index }: { d: (typeof DESTINATIONS)[number]; index: number }) {
   return (
@@ -34,7 +35,9 @@ export default function Destinations() {
       <div className="container-page">
         <div className="max-w-xl">
           <p className="eyebrow">Where we go</p>
-          <h2 className="section-title mt-3">Featured destinations</h2>
+          <h2 className="section-title mt-3">
+            <RevealText text="Featured destinations" />
+          </h2>
           <p className="mt-4 text-muted">
             Our trips focus on India&apos;s mountain and hill regions. Here&apos;s where we&apos;re
             heading right now.

@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { TOUR_TYPES, photo } from "@/constants/site";
+import { RevealText } from "@/components/ui/reveal-text";
 
 export default function TourTypes() {
   return (
@@ -8,7 +11,9 @@ export default function TourTypes() {
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Explore trips</p>
-          <h2 className="section-title mt-3">Travel your way</h2>
+          <h2 className="section-title mt-3">
+            <RevealText text="Travel your way" />
+          </h2>
           <p className="mt-4 text-muted">
             Come along on a group departure, or let us plan a private trip around you. Either way,
             we take care of the details so you can enjoy the mountains.
@@ -18,7 +23,7 @@ export default function TourTypes() {
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {TOUR_TYPES.map((t, i) => (
             <BlurFade key={t.title} inView delay={i * 0.1}>
-              <article className="group relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-[28px] p-8 text-cream sm:p-10">
+              <TiltCard className="group relative isolate flex h-full min-h-[420px] flex-col justify-end overflow-hidden rounded-[28px] p-8 text-cream shadow-[0_24px_50px_-28px_rgba(20,42,30,0.6)] sm:p-10">
                 <Image
                   src={photo(t.photo, 1200, 900)}
                   alt={t.alt}
@@ -32,8 +37,9 @@ export default function TourTypes() {
                 <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/85">{t.body}</p>
                 <a href="#contact" className="btn-primary mt-6 self-start">
                   {t.cta}
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
                 </a>
-              </article>
+              </TiltCard>
             </BlurFade>
           ))}
         </div>

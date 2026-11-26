@@ -30,7 +30,7 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sunset focus-visible:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-[color,background-color,transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-12px_rgba(20,42,30,0.45)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-sunset focus-visible:ring-offset-2;
   }
 
   .btn-primary {
@@ -53,13 +53,65 @@
 /* Hero text: transform-only rise (opacity stays 1 so it counts for LCP immediately). */
 @layer utilities {
   @keyframes hero-rise {
-    from { transform: translateY(10px); }
+    from { transform: translateY(22px); }
     to { transform: translateY(0); }
   }
-  .hero-rise {
-    animation: hero-rise 0.6s ease-out both;
+  .hero-stagger > * {
+    animation: hero-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-stagger > *:nth-child(2) { animation-delay: 0.08s; }
+  .hero-stagger > *:nth-child(3) { animation-delay: 0.16s; }
+  .hero-stagger > *:nth-child(4) { animation-delay: 0.24s; }
+  .hero-stagger > *:nth-child(5) { animation-delay: 0.32s; }
+
+  @keyframes scroll-dot {
+    0% { transform: translateY(0); opacity: 1; }
+    70% { transform: translateY(12px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 0; }
+  }
+  .scroll-dot {
+    animation: scroll-dot 1.8s ease-in-out infinite;
   }
   @media (prefers-reduced-motion: reduce) {
-    .hero-rise { animation: none; }
+    .hero-stagger > *,
+    .scroll-dot { animation: none; }
   }
+}
+
+/* Line-art scenes (lib/line-art): paper fills follow the scene's --paper colour. */
+.line-art .pp {
+  fill: var(--paper, #fdfcf8);
+}
+
+/* Reduced motion: keep colour changes, drop movement on hover and press. */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn:hover,
+  .btn:active {
+    transform: none;
+  }
+}
+
+/* WhatsApp button: pops in once the page has settled. */
+@keyframes wa-in {
+  from { transform: translateY(16px) scale(0.9); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+.wa-in {
+  animation: wa-in 0.45s cubic-bezier(0.2, 0.8, 0.3, 1.2) 1s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-in { animation: none; }
+}
+
+/* Footer links: an underline draws in from the left on hover. */
+.link-slide {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.3s ease, color 0.2s ease;
+}
+.link-slide:hover {
+  background-size: 100% 1px;
 }
